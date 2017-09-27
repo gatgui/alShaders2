@@ -10,8 +10,9 @@ env = excons.MakeBaseEnv()
 out_basedir = excons.OutputBaseDirectory()
 
 
-if 5 > arnold.Version(asString=False)[0]:
-    print "alshaders requires at least Arnold 5.0.0.1"
+arch, major, minor, patch = arnold.Version(asString=False)
+if 5 > arch or (major is 0 and minor < 1):
+    print "alshaders requires at least Arnold 5.0.1.0"
     sys.exit(1)
 
 
