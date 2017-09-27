@@ -76,6 +76,9 @@ if sys.platform != "win32":
     cppflags += " -Wno-unused-parameter"
     cppflags += " -Wno-sign-compare"
     cppflags += " -std=c++11"
+    if sys.platform != "darwin":
+        cppflags += " -Wno-strict-aliasing"
+        cppflags += " -Wno-format"
 
 
 ## cryptomatte
