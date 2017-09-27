@@ -11,3 +11,7 @@ build
 package.py
 docs
 tests/*/*_result/*
+.sconsign.dblite
+release/
+debug/
+excons.cache
