@@ -99,9 +99,10 @@ prjs.append({"name": "cryptomatte",
 env["BUILDERS"]["uiBuild"] = Builder(action=uiGen)
 crypto_ui = env.uiBuild(None, ["cryptomatte/cryptomatte.ui"])
 
-env.Alias("cryptomatte-ui", crypto_ui)
-env.Alias("cryptomatte", ["cryptomatte-shader", "cryptomatte-ui"])
-
 
 ## declare build targets
 excons.DeclareTargets(env, prjs)
+
+
+env.Alias("cryptomatte-ui", crypto_ui)
+env.Alias("cryptomatte", ["cryptomatte-shader", "cryptomatte-ui"])
